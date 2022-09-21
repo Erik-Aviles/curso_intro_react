@@ -1,5 +1,5 @@
 import React from "react";
-import '../styles/TodoSearch.css';
+import './TodoSearch.css';
 
 function TodoSearch({searchValue, setSearchValue}) {
     
@@ -15,7 +15,6 @@ function TodoSearch({searchValue, setSearchValue}) {
         value={searchValue}
         onChange={onSearchValueChange}
       />
-
     );
   }
   
