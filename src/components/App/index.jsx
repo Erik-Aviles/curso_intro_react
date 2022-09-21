@@ -1,6 +1,6 @@
 import React, { useState, } from "react";
 import { AppUI } from "./AppUI";
-import { useLocalStorage } from "../Custom/Hook";
+import { useLocalStorage } from "../../Custom/useLocalStorage";
 
 function App() {
 
