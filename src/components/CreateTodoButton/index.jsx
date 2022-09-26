@@ -1,20 +1,20 @@
 
-import React/* , { useRef }  */from "react";
+import React from "react";
 import './CreateTodoButtom.css'
 
-function CreateTodoButton(props){
-  const onClickButton = (msg) => {
-    alert(msg);
+function CreateTodoButton({setOpenModal}){
+  const onClickButton = () => {
+    setOpenModal(changeState => !changeState );
   };
   
 	return(
     <button
       className="CreateTodoButton"
-      onClick={() => onClickButton('Aquí se debería abrir el modal')}
+      onClick={onClickButton}
     >
       +
     </button> 
 	);
 }
 
-export { CreateTodoButton }
+export { CreateTodoButton };

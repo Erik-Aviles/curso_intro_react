@@ -5,6 +5,7 @@ body {
   color: #1E1E1F;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }

@@ -12,6 +12,7 @@ import { useLocalStorage } from "./useLocalStorage";
   } = useLocalStorage('TODOS_V1', []);
 
   const [searchValue, setSearchValue] = useState('');
+  const [openModal, setOpenModal ] = useState(false);
 
   const completedTodos = todos.filter(todo => !!todo.completed).length;
   const totalTodos = todos.length;
@@ -28,6 +29,14 @@ import { useLocalStorage } from "./useLocalStorage";
     });
   }
 
+  const addTodo = text =>{
+    const newTodos = [...todos];
+    newTodos.unshift({
+      completed: false,
+      text,
+    });
+    saveTodos(newTodos);
+  };
   const eliminarTodo = text =>{
     const todoIndex = todos.findIndex(todo => todo.text === text);
     const newTodos = [...todos];
@@ -50,8 +59,11 @@ import { useLocalStorage } from "./useLocalStorage";
       searchValue,
       setSearchValue,
       searchedTodos,
+      addTodo,
       completeTodo,
       eliminarTodo,
+      openModal, 
+      setOpenModal,
     }}>
       {props.children}
     </TodoContext.Provider>
