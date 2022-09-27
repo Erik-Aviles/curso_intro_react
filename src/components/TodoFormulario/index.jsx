@@ -7,6 +7,7 @@ import '../TodoFormulario/TodoForm.css'
 export const TodoFormulario = () => {
   const [newTodoValue, setNewTodoValue] = useState('');
     const {
+      totalTodos,
       addTodo,
       setOpenModal,
     } = useContext(TodoContext);
@@ -21,10 +22,10 @@ export const TodoFormulario = () => {
     const onSubmit = (event) => {
       event.preventDefault();
       if (newTodoValue === '') {
-        alert('Añadir tarea');
+        alert('Debes escribir una tarea');
       } else {
         addTodo(newTodoValue);
-        alert('Tarea añadida');
+        alert('Bien!... tarea añadida');
         setOpenModal(false);
       }   
     }
@@ -35,8 +36,9 @@ export const TodoFormulario = () => {
       <textarea 
         value={newTodoValue}
         onChange={onChange}
-        type='tetxt' 
+        type='text' 
         placeholder='Escribe la tarea'/>
+      <p>Task # {totalTodos + 1}</p>
       <div className='TodoForm-buttonContainer'>
         <button
           type='button'

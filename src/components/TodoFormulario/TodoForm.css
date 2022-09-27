@@ -1,8 +1,9 @@
 form {
     width: 90%;
-    max-width: 300px;
+    max-width: 500px;
     background-color: #fff;
     padding: 33px 40px;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,6 +34,10 @@ form {
   }
   textarea:focus {
     outline-color: #61DAFA;
+  }
+  p{
+    color:  #1E1E1F;
+    align-self: flex-end;
   }
   .TodoForm-buttonContainer {
     margin-top: 14px;

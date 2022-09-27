@@ -8,6 +8,9 @@ import { TodoItem } from '../TodoItem/index';
 import { TodoFormulario } from '../TodoFormulario';
 import { CreateTodoButton } from '../CreateTodoButton/index';
 import { Modal } from '../Modal';
+import { ErrorSkeleton } from '../LoandingSketeton/ErrorSkeleton';
+import { EmptySkeleton } from '../LoandingSketeton/EmptySkeleton';
+import { LoadingSkeleton } from '../LoandingSketeton/LoadingSkeleton';
 
 export function AppUI() {
   const {
@@ -25,9 +28,10 @@ export function AppUI() {
       <TodoSearch  />
       <TodoList>
 
-        {error && <p>Desesperate, estamos cargando</p>}
-        {loading && <p>Estamos cargando, NO te desesperes...</p>}
-        {(!loading && !searchedTodos.length ) && <p>No tienes tareas con esa letra!</p>}
+        {error && <ErrorSkeleton error={error} />}
+{/*         {loading && <LoadingSkeleton />} */}
+        {loading && new Array(5).fill(1).map((a, i) => <LoadingSkeleton key={i} />)}
+        {(!loading && !searchedTodos.length ) && <EmptySkeleton />}
 
         {searchedTodos.map(todo => (
         <TodoItem
