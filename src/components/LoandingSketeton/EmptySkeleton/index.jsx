@@ -3,7 +3,7 @@ import React from "react";
 export function EmptySkeleton(){
   return (
     <div>
-      <p>No tienes tareas con esa letra!</p>
+      <p>Sin tareas definidas!</p>
     </div>
   );
 }
