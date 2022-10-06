@@ -12,6 +12,9 @@ import { ErrorSkeleton } from '../LoandingSketeton/ErrorSkeleton';
 import { EmptySkeleton } from '../LoandingSketeton/EmptySkeleton';
 import { LoadingSkeleton } from '../LoandingSketeton/LoadingSkeleton';
 
+
+// ESTE ES EL INICIO DEL CAMBIO
+
 export function AppUI() {
   const {
     loading,
