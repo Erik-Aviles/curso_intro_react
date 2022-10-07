@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TodoHeader = ({children}) => {
+export const TodoHeader = ({children}) => {
   return (
     <header>
       {children}
@@ -8,4 +8,3 @@ const TodoHeader = ({children}) => {
   )
 }
 
-export default TodoHeader;
