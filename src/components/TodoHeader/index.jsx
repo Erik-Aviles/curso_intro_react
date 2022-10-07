@@ -8,4 +8,4 @@ const TodoHeader = ({children}) => {
   )
 }
 
-export default TodoHeader;
+export { TodoHeader };

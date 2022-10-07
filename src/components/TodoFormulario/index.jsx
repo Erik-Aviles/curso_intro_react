@@ -1,16 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
-import { useContext } from 'react';
-import { TodoContext } from '../TodoContext';
 import '../TodoFormulario/TodoForm.css'
 
-export const TodoFormulario = () => {
+export const TodoFormulario = ({totalTodos, addTodo, setOpenModal}) => {
   const [newTodoValue, setNewTodoValue] = useState('');
-    const {
-      totalTodos,
-      addTodo,
-      setOpenModal,
-    } = useContext(TodoContext);
 
     const onChange = (event) => {
       setNewTodoValue(event.target.value)
