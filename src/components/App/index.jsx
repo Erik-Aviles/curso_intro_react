@@ -10,6 +10,7 @@ import { CreateTodoButton } from '../CreateTodoButton/index';
 import { Modal } from '../Modal';
 import { ErrorSkeleton } from '../LoandingSketeton/ErrorSkeleton';
 import { EmptySkeleton } from '../LoandingSketeton/EmptySkeleton';
+import { LoadingSearchResult } from "../LoadingSearchResult";
 import { LoadingSkeleton } from '../LoandingSketeton/LoadingSkeleton';
 
 
@@ -41,12 +42,15 @@ function App() {
           setSearchValue={setSearchValue} />  
       </TodoHeader>
 
-      <TodoList 
+      <TodoList
         error={error}
         loading={loading}
         searchedTodos={searchedTodos}
+        searchValue={searchValue}
+        totalTodos={totalTodos}
         onError={() => <ErrorSkeleton />}
         onLoading= {() => <LoadingSkeleton />}
+        onEmptySearchResult= {(searchValue) => <LoadingSearchResult searchValue={searchValue}/>}
         onEmptyTodos={() => <EmptySkeleton />}
         render={todo => ( 
           <TodoItem 
@@ -57,23 +61,19 @@ function App() {
             onDelete={() => eliminarTodo(todo.text)}
           />
         )}
-      />
-  {/*     <TodoList>
-        {error && <ErrorSkeleton error={error} />}
-        {loading && new Array(5).fill(1).map((a, i) => <LoadingSkeleton key={i} />)}
-        {( !loading && !searchedTodos.length) && <EmptySkeleton />}
+        >
+    {/*     {todo => ( 
+          <TodoItem 
+            key={todo.text}
+            text={todo.text}
+            completed={todo.completed}
+            onComplete={() => completeTodo(todo.text)}
+            onDelete={() => eliminarTodo(todo.text)}
+          />
+        )} */}
 
-        {searchedTodos.map(todo => (
-        <TodoItem
-          key={todo.text}
-          text={todo.text}
-          completed={todo.completed}
-          onComplete={() => completeTodo(todo.text)}
-          onDelete={() => eliminarTodo(todo.text)}
-        />
-        ))}
-      </TodoList> */}
-     
+      </TodoList>
+      
       {!!openModal && (
         <Modal>
           <TodoFormulario  
