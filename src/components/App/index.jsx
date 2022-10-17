@@ -12,7 +12,7 @@ import { ErrorSkeleton } from '../LoandingSketeton/ErrorSkeleton';
 import { EmptySkeleton } from '../LoandingSketeton/EmptySkeleton';
 import { LoadingSearchResult } from "../LoadingSearchResult";
 import { LoadingSkeleton } from '../LoandingSketeton/LoadingSkeleton';
-import { GhangeAlerWithStorageListener }  from "../ChangeAlert";
+import { ChangeAlert }  from "../ChangeAlert";
 
 
 function App() {
@@ -90,7 +90,7 @@ function App() {
       <CreateTodoButton 
         setOpenModal={setOpenModal} 
       />
-      <GhangeAlerWithStorageListener 
+      <ChangeAlert 
         sincronize={sincronizeTodos} />
     </React.Fragment>
   );

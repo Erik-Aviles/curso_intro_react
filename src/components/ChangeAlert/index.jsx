@@ -1,25 +1,25 @@
 import React from 'react';
-import { withStorageListener } from './withStorageListener';
+import { useStorageListener } from './useStorageListener';
 import './ChangeAlert.css'
 
-const ChangeAlert = ({show, toogleShow}) => {
+const ChangeAlert = ( { sincronize }) => {
+  
+  const {show, toogleShow} = useStorageListener(sincronize);
+
   if (show) {
     return (
       <div className='change-bg'>
         <div className='messaje-sincronize-container'>
         <p className='messaje-sincronize'>Hubo cambios en otra ventana</p>
-        <p className='messaje-sincronize'>Deseas ver los cambio?</p>
         <button className='messaje-sincronize-button' onClick={() => toogleShow(false )}>
-           YES!
+          Refresh
         </button>
       </div>
-      </div>
+      </div>    
     )
   } else {
     return null;
   }
 }
 
-const GhangeAlerWithStorageListener = withStorageListener(ChangeAlert);
-
-export {GhangeAlerWithStorageListener};
+export { ChangeAlert };
