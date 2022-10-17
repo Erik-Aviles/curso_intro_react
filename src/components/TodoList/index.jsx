@@ -9,7 +9,7 @@ const renderFunc = props.children || props.render
       {props.loading && props.onLoading()}
       {!props.loading && !props.totalTodos && props.onEmptyTodos()}
       {(!!props.totalTodos && !props.searchedTodos.length) && props.onEmptySearchResult(props.searchValue)} 
-      {props.searchedTodos.map(renderFunc)}
+      {(!props.loading && !props.error) && props.searchedTodos.map(renderFunc)}
       <ul>
         {props.children}
       </ul>
