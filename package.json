@@ -46,5 +46,12 @@
   "devDependencies": {
     "gh-pages": "^4.0.0"
   },
-  "homepage": "https://IngEka.github.io/curso_intro_react"
+  "homepage": "https://IngEka.github.io/curso_intro_react",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IngEka/curso_intro_react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/IngEka/curso_intro_react/issues"
+  }
 }
