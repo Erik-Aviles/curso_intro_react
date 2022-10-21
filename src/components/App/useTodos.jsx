@@ -50,21 +50,28 @@ import { useLocalStorage } from "./useLocalStorage";
     newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
     saveTodos(newTodos);
   };
-  return ({
-      loading,
-      error,
-      totalTodos,
-      completedTodos,
-      searchValue,
-      setSearchValue,
-      searchedTodos,
-      addTodo,
-      completeTodo,
-      eliminarTodo,
-      openModal, 
-      setOpenModal,
-      sincronizeTodos,
-    });
+
+  const states = {
+    loading,
+    error,
+    totalTodos,
+    searchValue,
+    openModal, 
+    searchedTodos,
+    completedTodos,
+  }
+ const stateUpdaters = {
+    completeTodo,
+    setSearchValue,
+    addTodo,
+    eliminarTodo,
+    setOpenModal,
+    sincronizeTodos,
+  };
+  return {
+    states,
+    stateUpdaters,
+  }
 }
 
 export {useTodos};

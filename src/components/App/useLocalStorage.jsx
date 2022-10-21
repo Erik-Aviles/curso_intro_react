@@ -64,8 +64,10 @@ export function useLocalStorage(itemName, inicialValue) {
     error,
     sincronize, 
   };
-// <----
+
 }
+
+// HERRAMIENTAS PARA useREDUCER
 
 const inicialState = ({inicialValue}) => ({
   sincronizedItem: true,
